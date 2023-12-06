@@ -2,7 +2,8 @@ export enum BeachAccessType {
   NotRequired,
   OnProperty,
   LessThan1Mile,
-  MoreThan1Mile
+  MoreThan1Mile,
+  None
 }
 
 export enum PropertyType {

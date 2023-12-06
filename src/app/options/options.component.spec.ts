@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptionsComponent } from './options.component';
+import { OptionsComponent } from './options.componentFucked';
 
 describe('OptionsComponent', () => {
   let component: OptionsComponent;
@@ -10,8 +10,8 @@ describe('OptionsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [OptionsComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(OptionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

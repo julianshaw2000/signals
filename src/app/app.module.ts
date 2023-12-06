@@ -8,7 +8,7 @@ import { PropertyComponent } from './property/property.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OptionsComponent } from './options/options.component';
-// import { FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [

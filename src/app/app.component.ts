@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, Signal, inject } from '@angular/core';
 import { PropertyService } from './property/property.service';
 import { Owner } from './owner';
+import { Property } from './property/property';
 
 @Component({
   selector: 'app-root',
@@ -24,16 +25,19 @@ export class AppComponent {
     { id: 3, name: 'Tony' },
   ];
 
+  propSignal: Property | null
+
   constructor() {
     this.selectedOwnerId = this.options[0].id; // Default selected option ID
   }
 
-  onSelectionChange(selectedId: number) {
-    this.propertyService.ownerSelected(selectedId);
+  onSelectionChange(ownerId: number) {
+    this.propertyService.ownerSelected(ownerId);
   }
 
   propertySelected(id: number) {
     this.propertyService.propertySelected(id);
+    this.propSignal = this.propertyService.selectedProperty()
   }
 
 }

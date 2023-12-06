@@ -1,12 +1,14 @@
-<p>options works!</p>
-<form [formGroup]="profileForm">
-  <label>
-    First Name:
-    <input type="text" formControlName="title" />
-  </label>
-  <label>
-    id:
-    <input type="number" formControlName="id" />
-  </label>
-  <!-- <div *ngIf="firstNameSignal()">{{ firstNameSignal() }} is a great name!</div> -->
+<form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td><label for="title">Property Title:</label></td>
+      <td><input type="text" formControlName="title" /></td>
+    </tr>
+    <tr>
+      <td><label for="subTitle">Property Sub-Title:</label></td>
+      <td><input type="text" formControlName="subTitle" /></td>
+    </tr>
+  </table>
+
+  <button type="submit" [disabled]="!propertyForm.valid">Submit</button>
 </form>
