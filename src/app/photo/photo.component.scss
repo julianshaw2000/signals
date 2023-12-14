@@ -1,0 +1,21 @@
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.image-container {
+  flex: none;
+  margin-right: 10px; /* Adjust as needed */
+  text-align: center; /* Center the title under the image */
+}
+
+.image-container img {
+  max-height: 200px; /* Adjust as needed */
+  display: block;
+}
+
+.image-title {
+  margin-top: 5px; /* Space between image and title */
+  font-size: 14px; /* Adjust as needed */
+}

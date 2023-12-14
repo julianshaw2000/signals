@@ -25,7 +25,6 @@ export class AppComponent {
     { id: 3, name: 'Tony' },
   ];
 
-  propSignal: Property | null
 
   constructor() {
     this.selectedOwnerId = this.options[0].id; // Default selected option ID
@@ -33,11 +32,13 @@ export class AppComponent {
 
   onSelectionChange(ownerId: number) {
     this.propertyService.ownerSelected(ownerId);
+    // if (this.propertyService.selectedOwnerPropertys().length > 0) {
+    //   this.propertySelected(this.propertyService.selectedOwnerPropertys()[0].id)
+    // }
   }
 
   propertySelected(id: number) {
     this.propertyService.propertySelected(id);
-    this.propSignal = this.propertyService.selectedProperty()
   }
 
 }

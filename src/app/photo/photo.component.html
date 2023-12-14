@@ -1,5 +1,26 @@
-<p>photo works!</p>
-
-{{ photos() | json }}
-
 <p>============= PHOTO =====================</p>
+
+<div class="horizontal-scroll">
+  @for (image of propertyService.writablePhotos(); track image.title) {
+  <div class="image-container">
+    <img [src]="image.url" [alt]="image.title" />
+    <div class="image-title">{{ image.title }}</div>
+    <div>Default xxx: {{ image.isDefault }}</div>
+    <button (click)="removeImage(image)">Remove</button>
+    <button (click)="makeDefault(image)">Default</button>
+  </div>
+  } @empty {
+  <p>No images found.</p>
+  }
+</div>
+<!--
+<div class="horizontal-scroll">
+  @for (image of photoArray; track image.title) {
+  <div class="image-container">
+    <img [src]="image.url" [alt]="image.title" />
+    <div class="image-title">{{ image.title }}</div>
+  </div>
+  } @empty {
+  <p>No images found.</p>
+  }
+</div> -->

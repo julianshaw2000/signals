@@ -1,4 +1,8 @@
-import { AfterRenderPhase, AfterViewChecked, AfterViewInit, Component, Input, OnInit, Signal, afterRender, computed, signal } from '@angular/core';
+import {
+  AfterRenderPhase, AfterViewChecked, AfterViewInit,
+  Component, Input, OnInit, Signal, afterRender,
+  computed, signal
+} from '@angular/core';
 import { PropertyService } from '../property/property.service';
 import { BeachAccessType, Property } from '../property/property';
 import { toObservable } from '@angular/core/rxjs-interop';
@@ -76,9 +80,18 @@ export class OptionsComponent implements OnInit {
 
   onSubmit() {
     if (this.propertyForm.valid) {
-      console.log('Form Data: ', this.propertyForm.value);
+      // console.log('Form Data: ', this.propertyForm.value);
+      this.saveAll()
     }
   }
 
+  saveAll() {
+    let isSaved = this.propertyService.saveAll(this.propertyForm.value);
+
+    if (!isSaved) {
+      console.log('Error saving form data')
+    }
+
+  }
 
 }

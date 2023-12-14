@@ -13,11 +13,11 @@ export enum PropertyType {
   Bungalow
 }
 
-export interface Photo {
-  url: string;
-  title: string;
-  default?: boolean
-}
+// export interface Photo {
+//   url: string;
+//   title: string;
+//   default?: boolean
+// }
 
 
 
